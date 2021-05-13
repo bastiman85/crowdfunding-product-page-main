@@ -1,0 +1,13 @@
+/* ** HEADER ** */
+header {
+   background-image: linear-gradient(180deg, #00000088 20%, #ffffff00 100%), url(../images/image-hero-mobile.jpg);
+   background-repeat: no-repeat;
+   background-position: center bottom;
+   background-size: cover;
+   height: (600 / 750) * 95vw;
+
+   @include medium-up {
+      background-image: linear-gradient(180deg, #00000088 20%, #ffffff00 100%), url(../images/image-hero-desktop.jpg);
+      height: (400 / 1400) * 95vw;
+   }
+}

@@ -1,0 +1,63 @@
+/* ** COMPONENTS ** */
+
+.container {
+   // width: min(90%, 75rem);
+   margin-left: max(1.5rem, env(safe-area-inset-left));
+   margin-right: max(1.5rem, env(safe-area-inset-right));
+
+   @media (min-width: 50em) {
+      width: 90%;
+      max-width: 44.5rem;
+      margin: 0 auto;
+   }
+
+   @media (max-width: 450px) {
+      margin-left: max(1em, env(safe-area-inset-left));
+      margin-right: max(1em, env(safe-area-inset-right));
+   }
+}
+
+.flow-content > * + * {
+   margin-top: var(--flow-space, var(--spacer));
+}
+
+.flow-content--large {
+   --flow-space: 2rem;
+}
+
+.center {
+   text-align: center;
+}
+
+button {
+   cursor: pointer;
+   display: inline-block;
+   text-decoration: none;
+   color: white;
+
+   &:active {
+      box-shadow: inset 0px 10px 38px -10px rgba(0, 0, 0, 0.5);
+   }
+}
+
+.flex,
+.row {
+   display: flex;
+   justify-content: space-between;
+   gap: var(--gap, var(--spacer));
+}
+
+.flex {
+   flex-direction: column;
+}
+
+@include medium-up {
+   .flex {
+      flex-direction: row;
+   }
+
+   .flex.even > *,
+   .row.even > * {
+      flex-basis: 100%;
+   }
+}

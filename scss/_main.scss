@@ -1,0 +1,227 @@
+section {
+   margin-bottom: 1.5rem;
+   background-color: white;
+   border-radius: 0.5rem;
+}
+
+main {
+   margin-top: -3.5rem;
+
+   @include medium-up {
+      margin-top: -6rem;
+   }
+}
+
+.crowdfunder-logo + h1 {
+   margin-top: 0;
+}
+
+.crowdfunder-logo {
+   display: flex;
+   justify-content: center;
+   transform: translateY(-50%);
+}
+
+.progress-bar {
+   background-color: var(--clr-neutral-lightest);
+   border-radius: 100vw;
+   margin-top: 2rem;
+}
+
+.progress {
+   width: 89914 / 100000 * 100%;
+   height: 0.8rem;
+   background-color: var(--clr-primary-light);
+   border-radius: 100vw;
+}
+
+.amount-left {
+   display: flex;
+   align-items: center;
+}
+
+.number,
+.amount-left span {
+   font-size: 2rem;
+   font-weight: bold;
+   color: var(--clr-neutral-dark);
+   margin-right: 0.5rem;
+}
+
+.stats {
+   text-align: center;
+
+   @include medium-up {
+      text-align: left;
+   }
+}
+
+.card {
+   --gap: 1rem;
+
+   border: 1px solid var(--clr-neutral-light);
+   border-color: var(--clr-neutral-lighter);
+   border-radius: 0.5rem;
+   padding: 1rem;
+
+   @include medium-up {
+      --gap: 1.5rem;
+      padding: 2rem;
+   }
+}
+
+.card .flex {
+   --gap: 0;
+
+   @include medium-up {
+      align-items: center;
+   }
+}
+
+.card.selected {
+   border-color: var(--clr-primary-light);
+}
+
+.price {
+   color: var(--clr-primary-light);
+}
+
+.inactive {
+   opacity: 0.4;
+}
+
+.pledge {
+   border-top: 1px solid var(--clr-neutral-lighter);
+   margin-left: calc(var(--gap) * -1);
+   margin-right: calc(var(--gap) * -1);
+   padding-top: 1.5rem;
+   display: flex;
+   gap: 1em;
+   align-items: center;
+   flex-wrap: wrap;
+   justify-content: space-around;
+
+   p {
+      padding-left: 1.5rem;
+      width: 100%;
+      text-align: center;
+
+      @include medium-up {
+         width: unset;
+         text-align: left;
+      }
+   }
+
+   label {
+      width: 125px;
+      margin-left: 1rem;
+      display: flex;
+      padding-left: 2em;
+
+      @include medium-up {
+         margin-left: auto;
+      }
+   }
+
+   input {
+      width: 5ch;
+      -webkit-appearance: none;
+      -moz-appearance: textfield;
+   }
+
+   button {
+      margin-right: 1rem;
+      @include medium-up {
+         margin-right: 1.5rem;
+      }
+   }
+}
+
+.card .pledge {
+   display: none;
+}
+
+.card.selected .pledge {
+   display: flex;
+}
+
+.card-description {
+   display: grid;
+   grid-template-columns: min-content 1fr max-content;
+   grid-template-rows: min-content 1fr min-content;
+   gap: 1.5em;
+
+   grid-template-areas:
+      "input name name"
+      "desc desc desc"
+      "amount amount amount";
+
+   @include medium-up {
+      grid-template-areas:
+         "input name amount"
+         ". desc desc";
+   }
+
+   input {
+      grid-area: input;
+      align-self: center;
+   }
+
+   .flex {
+      --gap: 0.5rem;
+      grid-area: name;
+      justify-content: center;
+      align-items: flex-start;
+
+      @include medium-up {
+         --gap: 1rem;
+         grid-area: name;
+         justify-content: flex-start;
+         align-items: center;
+      }
+   }
+
+   .description {
+      grid-area: desc;
+   }
+
+   .amount-left {
+      grid-area: amount;
+
+      span {
+         font-size: 1.2rem;
+      }
+   }
+}
+
+.stats .flex div {
+   position: relative;
+   padding: 1em 0;
+
+   @include medium-up {
+      margin: 1em 0;
+      padding: 0;
+   }
+}
+
+.stats .flex div + div {
+   @include medium-up {
+      border-left: 1px solid var(--clr-neutral-lighter);
+      padding-left: 2.5rem;
+   }
+}
+
+.stats .flex div + div:before {
+   content: "";
+   height: 1px;
+   width: 80px;
+   background-color: var(--clr-neutral-lighter);
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
+
+   @include medium-up {
+      content: unset;
+   }
+}

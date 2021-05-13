@@ -1,0 +1,135 @@
+button,
+input,
+.pledge > label,
+.bookmark > label {
+   font-weight: 500;
+   display: inline-block;
+   border-radius: 100vw;
+}
+
+button,
+.pledge > label,
+.bookmark > label {
+   padding: 1em 2em;
+
+   @include medium-up {
+      padding: 1em 3em;
+   }
+}
+
+button {
+   color: white;
+   align-self: flex-start;
+}
+
+input[type="radio"],
+.pledge > label {
+   appearance: none;
+   border: 1px solid var(--clr-neutral-lighter);
+   color: var(--clr-neutral-lighter);
+
+   &:hover,
+   &:focus-within {
+      border-color: var(--clr-primary-light);
+      color: var(--clr-primary-light);
+   }
+}
+
+input[type="checkbox"] {
+   appearance: none;
+   position: absolute;
+}
+
+input[type="number"] {
+   border: none;
+   margin-left: 1em;
+
+   &:focus-visible {
+      outline: none;
+   }
+
+   &:invalid {
+      color: red;
+   }
+}
+
+input[type="radio"] {
+   padding: 7px;
+   position: relative;
+}
+
+input[type="radio"]::after {
+   content: "";
+   display: block;
+   width: 17px;
+   height: 17px;
+   border-radius: 100vw;
+}
+
+input[type="radio"]:checked::after {
+   background: var(--clr-primary-light);
+}
+
+.card-description {
+   position: relative;
+}
+
+.card-description > label {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+}
+
+.btn-primary {
+   background-color: var(--clr-primary-light);
+
+   &:hover,
+   &:focus {
+      background-color: var(--clr-primary-dark);
+   }
+}
+
+.btn-inactive {
+   background-color: var(--clr-neutral-light);
+   cursor: no-drop;
+}
+
+.bookmark label {
+   display: flex;
+   align-items: center;
+   background-color: var(--clr-neutral-lightest);
+   position: relative;
+   padding-left: 4.5rem;
+   padding-right: 1.5rem;
+
+   svg {
+      position: absolute;
+      left: 0;
+   }
+}
+
+.bookmark > input:checked + label {
+   color: var(--clr-primary-dark);
+
+   svg circle {
+      fill: var(--clr-primary-dark);
+   }
+
+   svg path {
+      fill: white;
+   }
+}
+
+@include small {
+   .bookmark label span {
+      display: none;
+   }
+
+   .bookmark label {
+      padding: 0;
+   }
+
+   .bookmark label svg {
+      position: static;
+   }
+}

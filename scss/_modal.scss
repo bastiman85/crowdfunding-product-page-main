@@ -1,0 +1,68 @@
+.modal-container {
+   display: none; /* Set to grid by JS */
+
+   position: fixed;
+   z-index: 10;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.4);
+
+   @media (min-height: 1200px) {
+      align-items: center;
+   }
+}
+
+.modal {
+   background-color: white;
+   border-radius: 0.5rem;
+   position: relative;
+}
+
+.close-modal {
+   position: absolute;
+   top: 2rem;
+   right: 2rem;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+   cursor: pointer;
+
+   svg path {
+      opacity: 1;
+   }
+}
+
+.modal > .img {
+   display: flex;
+   justify-content: center;
+}
+
+@include medium-up {
+   .modal-success {
+      max-width: 75%;
+      margin: 0 auto;
+   }
+}
+
+.close-modal + h2 {
+   margin-top: 0;
+}
+
+.modal-success {
+   display: none;
+}
+
+.modal .amount-left {
+   margin-bottom: 1em;
+   @include medium-up {
+      margin-bottom: 0em;
+   }
+}
+
+.modal .card:not(.inactive) .card-description:hover h3 {
+   color: var(--clr-primary-light);
+}

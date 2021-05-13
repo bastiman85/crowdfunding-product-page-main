@@ -1,0 +1,45 @@
+/* ** GENERAL STYLING ** */
+body {
+   background-color: hsl(0, 0%, 98%);
+   color: var(--clr-neutral-light);
+   position: relative;
+
+   &.overlay:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: "";
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+   }
+}
+
+h1,
+h2,
+h3,
+.nav-link {
+   color: var(--clr-neutral-dark);
+}
+
+section,
+.modal {
+   padding: 1.5rem;
+
+   @include medium-up {
+      padding: 2.5rem;
+   }
+
+   @media (max-width: 450px) {
+      padding: 1rem;
+   }
+}
+
+section:first-of-type {
+   padding-top: 0;
+
+   & > .row {
+      margin-top: 2rem;
+   }
+}
