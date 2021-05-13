@@ -6,6 +6,8 @@ var modalPledge = document.querySelector(".modal-pledge");
 var modalSuccess = document.querySelector(".modal-success");
 var closeSuccess = document.querySelector(".modal-success button");
 var mobileMenu = document.querySelector(".mobile-menu");
+var bookmark = document.querySelector(".bookmark input");
+var bookmarkText = document.querySelector(".bookmark label span");
 var amountBacked = 89914;
 var backers = 5007;
 
@@ -150,25 +152,6 @@ function closeMenu() {
    mobileMenu.childNodes[0].src = "./images/icon-hamburger.svg";
 }
 
-// var modalh3 = document.querySelectorAll(".modal h3");
-
-// for (i = 0; i < modalh3.length; i++) {
-//    modalh3[i].addEventListener("mouseover", function (event) {
-//       event.target.style.color = "red";
-//    });
-//    modalh3[i].addEventListener("mouseout", function (event) {
-//       event.target.style.color = "var(--clr-neutral-dark)";
-//    });
-// }
-
-// function mouseOver(h3) {
-//    h3.style.color = "red";
-// }
-
-// function mouseOut(h3) {
-//    // h3.style.color = "var(--clr-neutral-dark)";
-// }
-
 function validateForm() {
    var pledge2valid = document.getElementById("pledge2").value;
    var pledge3valid = document.getElementById("pledge3").value;
@@ -181,5 +164,15 @@ function validateForm() {
       return false;
    } else {
       return true;
+   }
+}
+
+bookmark.addEventListener("click", bookmarked);
+
+function bookmarked() {
+   if (bookmark.checked) {
+      bookmarkText.innerHTML = "Bookmarked";
+   } else {
+      bookmarkText.innerHTML = "Bookmark";
    }
 }
