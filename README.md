@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/bastiman85/crowdfunding-product-page-main](https://github.com/bastiman85/crowdfunding-product-page-main)
+- Live Site URL: [https://bastiman85.github.io/crowdfunding-product-page-main/](https://bastiman85.github.io/crowdfunding-product-page-main/)
 
 ## My process
 
